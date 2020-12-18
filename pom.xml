@@ -9,14 +9,14 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>docker</artifactId>
+	<artifactId>server-aiviacad</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>docker</name>
+	<name>server-aiviacad</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
 		<java.version>1.8</java.version>
-		<docker.image.prefix>docker-test</docker.image.prefix>
+		<docker.image.prefix>lghll</docker.image.prefix>
 	</properties>
 
 	<dependencies>
@@ -46,11 +46,10 @@
 			<!-- Docker maven plugin -->
 			<plugin>
 				<groupId>com.spotify</groupId>
-				<artifactId>docker-maven-plugin</artifactId>
+				<artifactId>dockerfile-maven-plugin</artifactId>
 				<version>1.4.10</version>
 				<configuration>
-					<imageName>${docker.image.prefix}/${project.artifactId}</imageName>
-					<dockerDirectory>src/main/docker</dockerDirectory>
+					<repository>${docker.image.prefix}/${project.artifactId}</repository>
 					<tag>${maven.build.timestamp}</tag>
 					<buildArgs>
 						<JAR_FILE>target/docker-0.0.1-SNAPSHOT.jar</JAR_FILE>
