@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>server-aiviacad</artifactId>
+	<artifactId>serveraiviacad</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>server-aiviacad</name>
+	<name>serveraiviacad</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -31,6 +31,9 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+
+
+
 
 	<build>
 		<plugins>
@@ -52,12 +55,14 @@
 					<repository>${docker.image.prefix}/${project.artifactId}</repository>
 					<tag>${maven.build.timestamp}</tag>
 					<buildArgs>
-						<JAR_FILE>target/docker-0.0.1-SNAPSHOT.jar</JAR_FILE>
+						<JAR_FILE>target/serveraiviacad-0.0.1-SNAPSHOT.jar</JAR_FILE>
 					</buildArgs>
 				</configuration>
 			</plugin>
 
+
 		</plugins>
 	</build>
+
 
 </project>
